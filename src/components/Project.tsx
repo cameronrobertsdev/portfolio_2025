@@ -8,13 +8,16 @@ interface ProjectParameters {
 }
 
 function Project({ name, summary, description, images, logo }: ProjectParameters) {
+    
+    const imageSet = images?.map(image => <li><img src={image} alt="an image from a web portfolio" /></li>)
+
     return (
         <>
             <img src={logo}></img>
             <h1 className="projectName">{name}</h1>
             <h5 className="projectSummary">{summary}</h5>
             <ul>
-                {images}.map(image => <li><img src="image" alt="a screenshot from a developer portfolio"></img></li> )
+                {imageSet}
             </ul>
             <p>{description}</p>
 

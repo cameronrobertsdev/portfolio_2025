@@ -1,12 +1,15 @@
-import { useState } from 'react'
 import './App.css'
+import Project from './components/Project'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
-      <h1>Hello</h1>
+      <Project 
+      name='As the Crow Flies'
+      summary='A game by Cameron Roberts'
+      description='This game was made for fun'
+      ></Project>
     </>
   )
 }
