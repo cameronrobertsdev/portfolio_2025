@@ -1,0 +1,10 @@
+A tower defense game made in Unity.
+
+The player doesn't control any character diretly, but only has the ability to
+guide a gaint monster by strategically placing pieces of food.
+
+The game was interesting in concept but flawed in execution as players are
+unable to have a strong direct impact on the easily distracted monster. 
+
+It features some lovely Egytian inspired music by my then 15 year old sister
+Sylvia Roberts. 

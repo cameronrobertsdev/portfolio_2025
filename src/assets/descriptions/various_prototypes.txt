@@ -1,0 +1,11 @@
+In addition to the many game jam games I've created there are also numerous
+prototypes for games that haven't (until now) seen the light of day.
+
+Some of these projects include:
+
+- A Vamipre Survivors inspired FPS game.
+- A First-person exploration games
+- An abstract action game called "Euler"
+- A generic Zombie shooter game made to learn more about Godot
+- A top-down action adventure game
+- And more oddities! 

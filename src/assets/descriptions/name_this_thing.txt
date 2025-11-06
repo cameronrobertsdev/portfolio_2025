@@ -1,0 +1,9 @@
+An experimental prototype for an interactive experience.
+
+Random, bizzare objects appear and the player is encouraged to name the
+objects.
+
+After giving the objects names, the player can then visit a screen where they
+can explore their collection of oddities.
+
+Made with Unity.

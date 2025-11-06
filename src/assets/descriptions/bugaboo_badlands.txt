@@ -1,0 +1,7 @@
+Made in godot.
+
+An experimental game that allows the player to take control
+of almost any object simply by clicking on it.
+
+The camera controls were poorly recieved but otherwise it was quite popular
+taking fifth place overall out of 79 entries.

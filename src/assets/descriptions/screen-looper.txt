@@ -1,0 +1,7 @@
+A twin-stick shooter game made with Unity. I am fairly proud of this project.
+It's central conceit was the ability to lock the screen in place. Once the
+screen was locked, the player could move to the edges and loop back around the
+screen to the other side.
+
+This predated a game called [insert name of game]. A game that had a similar
+mechanic and was widely praised for its' inventivness.
