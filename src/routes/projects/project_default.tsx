@@ -1,30 +1,25 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Link } from '@tanstack/react-router'
+import Project from '../../components/Project'
+import type { projectInterface } from '../../interfaces/projectInterface'
 
 export const Route = createFileRoute('/projects/project_default')({
   component: RouteComponent,
 })
 
+const projectInfo: projectInterface = {
+  cover: "/",
+  name: 'Bugaboo Badlands',
+  tagline: 'a game about bugs',
+  framework: 'Godot',
+  language: 'GDScript',
+  release: '2025',
+  screenshot: '/',
+  description: 'A game made for a game jam. The game jam theme was: "everything is alive".',
+  url: 'https://dude-the-hero.itch.io/bugaboo-badlands'
+}
+
 function RouteComponent() {
-  return(
-    <>
-      <div className="project">
-        <img src="" alt="the logo image for a game" />
-        <h1 className='projectName'>Default Project Page</h1>
-        <h6 className='projectTagline'>This is the default tagline for the project.</h6>
-        <div className='projectDetails'>
-          <ul>
-            <li>Framework: Unity</li>
-            <li>Language: C#</li>
-            <li>Release: 2021</li>
-          </ul>
-        </div>
-        <p>This is the default project page content.</p>
-        <img src="" alt="a screenshot of the game" />
-        <p>More details about the default project can be added here.</p>
-        <img src="" alt="another screenshot of the game" />
-        <Link to="/">Back to Home</Link>
-      </div>
-    </>
+  return (
+    <Project project={projectInfo}></Project>
   )
 }

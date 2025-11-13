@@ -1,26 +1,26 @@
-interface ProjectParameters {
-    name: string;
-    summary: string;
-    description: string;
-    images?: [string];
-    logo?: string;
-   // thumbnail?: string;
+
+import { type projectInterface } from "../interfaces/projectInterface";
+
+interface projectParam{
+    project: projectInterface;
 }
 
-function Project({ name, summary, description, images, logo }: ProjectParameters) {
-    
-    const imageSet = images?.map(image => <li><img src={image} alt="an image from a web portfolio" /></li>)
-
+function Project({project} : projectParam) {
     return (
         <>
-            <img src={logo}></img>
-            <h1 className="projectName">{name}</h1>
-            <h5 className="projectSummary">{summary}</h5>
-            <ul>
-                {imageSet}
-            </ul>
-            <p>{description}</p>
-
+            <img className="projectCover" src={project.cover} alt="the cover from an indie video game"></img>
+            <h1 className="projectName">{project.name}</h1>
+            <h5 className="projectTagline">{project.tagline}</h5>
+            <div className="projectSpecs">
+                <ul>
+                    <li>Framework: {project.framework}</li>
+                    <li>Language: {project.language}</li>
+                    <li>Released: {project.release}</li>
+                </ul>
+            </div>
+            <img src={project.screenshot} alt="a screenshot from an indie game"></img>
+            <p>{project.description}</p>
+            <a href={project.url}>Project Page</a>
         </>
     )
 }
