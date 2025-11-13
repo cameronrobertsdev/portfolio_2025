@@ -10,7 +10,7 @@ export const projectList: gridItem[] =
         },
         {
             projectName: "As the Crow Flies",
-            projectURL: "/projects/bugaboo_badlands",
+            projectURL: "/projects/atcf",
             thumbnailURL: "",
             thumbnailAlt: "",
         },

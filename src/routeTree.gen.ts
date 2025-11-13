@@ -13,6 +13,8 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as ProjectsIndexRouteImport } from './routes/projects/index'
 import { Route as ProjectsProject_defaultRouteImport } from './routes/projects/project_default'
+import { Route as ProjectsOgreRouteImport } from './routes/projects/ogre'
+import { Route as ProjectsAtcfRouteImport } from './routes/projects/atcf'
 import { Route as GridviewGridRouteImport } from './routes/gridview/grid'
 
 const AboutRoute = AboutRouteImport.update({
@@ -35,6 +37,16 @@ const ProjectsProject_defaultRoute = ProjectsProject_defaultRouteImport.update({
   path: '/projects/project_default',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsOgreRoute = ProjectsOgreRouteImport.update({
+  id: '/projects/ogre',
+  path: '/projects/ogre',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProjectsAtcfRoute = ProjectsAtcfRouteImport.update({
+  id: '/projects/atcf',
+  path: '/projects/atcf',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const GridviewGridRoute = GridviewGridRouteImport.update({
   id: '/gridview/grid',
   path: '/gridview/grid',
@@ -45,6 +57,8 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gridview/grid': typeof GridviewGridRoute
+  '/projects/atcf': typeof ProjectsAtcfRoute
+  '/projects/ogre': typeof ProjectsOgreRoute
   '/projects/project_default': typeof ProjectsProject_defaultRoute
   '/projects': typeof ProjectsIndexRoute
 }
@@ -52,6 +66,8 @@ export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gridview/grid': typeof GridviewGridRoute
+  '/projects/atcf': typeof ProjectsAtcfRoute
+  '/projects/ogre': typeof ProjectsOgreRoute
   '/projects/project_default': typeof ProjectsProject_defaultRoute
   '/projects': typeof ProjectsIndexRoute
 }
@@ -60,6 +76,8 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/gridview/grid': typeof GridviewGridRoute
+  '/projects/atcf': typeof ProjectsAtcfRoute
+  '/projects/ogre': typeof ProjectsOgreRoute
   '/projects/project_default': typeof ProjectsProject_defaultRoute
   '/projects/': typeof ProjectsIndexRoute
 }
@@ -69,6 +87,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/gridview/grid'
+    | '/projects/atcf'
+    | '/projects/ogre'
     | '/projects/project_default'
     | '/projects'
   fileRoutesByTo: FileRoutesByTo
@@ -76,6 +96,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/gridview/grid'
+    | '/projects/atcf'
+    | '/projects/ogre'
     | '/projects/project_default'
     | '/projects'
   id:
@@ -83,6 +105,8 @@ export interface FileRouteTypes {
     | '/'
     | '/about'
     | '/gridview/grid'
+    | '/projects/atcf'
+    | '/projects/ogre'
     | '/projects/project_default'
     | '/projects/'
   fileRoutesById: FileRoutesById
@@ -91,6 +115,8 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
   GridviewGridRoute: typeof GridviewGridRoute
+  ProjectsAtcfRoute: typeof ProjectsAtcfRoute
+  ProjectsOgreRoute: typeof ProjectsOgreRoute
   ProjectsProject_defaultRoute: typeof ProjectsProject_defaultRoute
   ProjectsIndexRoute: typeof ProjectsIndexRoute
 }
@@ -125,6 +151,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsProject_defaultRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/ogre': {
+      id: '/projects/ogre'
+      path: '/projects/ogre'
+      fullPath: '/projects/ogre'
+      preLoaderRoute: typeof ProjectsOgreRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/projects/atcf': {
+      id: '/projects/atcf'
+      path: '/projects/atcf'
+      fullPath: '/projects/atcf'
+      preLoaderRoute: typeof ProjectsAtcfRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/gridview/grid': {
       id: '/gridview/grid'
       path: '/gridview/grid'
@@ -139,6 +179,8 @@ const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
   GridviewGridRoute: GridviewGridRoute,
+  ProjectsAtcfRoute: ProjectsAtcfRoute,
+  ProjectsOgreRoute: ProjectsOgreRoute,
   ProjectsProject_defaultRoute: ProjectsProject_defaultRoute,
   ProjectsIndexRoute: ProjectsIndexRoute,
 }

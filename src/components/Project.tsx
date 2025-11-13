@@ -18,7 +18,7 @@ function Project({project} : projectParam) {
                     <li>Released: {project.release}</li>
                 </ul>
             </div>
-            <img src={project.screenshot} alt="a screenshot from an indie game"></img>
+            <img src={project.screenshot} alt="a screenshot from an indie game" width="40%"></img>
             <p>{project.description}</p>
             <a href={project.url}>Project Page</a>
         </>
