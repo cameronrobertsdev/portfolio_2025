@@ -11,9 +11,7 @@ function NavBar({items}:NavParameters){
                 <ul>
                     {items.map(item => 
                     <li>
-                        <Link to={'/' + item.toLowerCase()}>
-                            {item}
-                        </Link>
+                        {item == 'Home' ? <Link to='/'>{item}</Link> :  <Link to={'/' + item.toLowerCase()}>{item}</Link>}
                     </li>)}
                 </ul>
             </nav>
