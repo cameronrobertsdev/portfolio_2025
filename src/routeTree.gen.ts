@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PostsIndexRouteImport } from './routes/posts/index'
+import { Route as ProjectsProject_defaultRouteImport } from './routes/projects/project_default'
 
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
@@ -28,34 +29,43 @@ const PostsIndexRoute = PostsIndexRouteImport.update({
   path: '/posts/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProjectsProject_defaultRoute = ProjectsProject_defaultRouteImport.update({
+  id: '/projects/project_default',
+  path: '/projects/project_default',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/projects/project_default': typeof ProjectsProject_defaultRoute
   '/posts': typeof PostsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/projects/project_default': typeof ProjectsProject_defaultRoute
   '/posts': typeof PostsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/projects/project_default': typeof ProjectsProject_defaultRoute
   '/posts/': typeof PostsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/posts'
+  fullPaths: '/' | '/about' | '/projects/project_default' | '/posts'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/posts'
-  id: '__root__' | '/' | '/about' | '/posts/'
+  to: '/' | '/about' | '/projects/project_default' | '/posts'
+  id: '__root__' | '/' | '/about' | '/projects/project_default' | '/posts/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ProjectsProject_defaultRoute: typeof ProjectsProject_defaultRoute
   PostsIndexRoute: typeof PostsIndexRoute
 }
 
@@ -82,12 +92,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PostsIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/projects/project_default': {
+      id: '/projects/project_default'
+      path: '/projects/project_default'
+      fullPath: '/projects/project_default'
+      preLoaderRoute: typeof ProjectsProject_defaultRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ProjectsProject_defaultRoute: ProjectsProject_defaultRoute,
   PostsIndexRoute: PostsIndexRoute,
 }
 export const routeTree = rootRouteImport
