@@ -1,5 +1,7 @@
 import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
+import '../styles/default.css'
+
 
 const RootLayout = () => (
   <>
@@ -10,7 +12,7 @@ const RootLayout = () => (
       <Link to="/about" className="[&.active]:font-bold">
         About
       </Link>
-      <Link to="/posts/" className="[&.active]:font-bold">
+      <Link to="/posts" className="[&.active]:font-bold">
         Posts
       </Link>
     </div>
