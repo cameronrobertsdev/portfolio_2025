@@ -13,6 +13,7 @@ import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as PostsIndexRouteImport } from './routes/posts/index'
 import { Route as ProjectsProject_defaultRouteImport } from './routes/projects/project_default'
+import { Route as GridviewGridRouteImport } from './routes/gridview/grid'
 
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
@@ -34,16 +35,23 @@ const ProjectsProject_defaultRoute = ProjectsProject_defaultRouteImport.update({
   path: '/projects/project_default',
   getParentRoute: () => rootRouteImport,
 } as any)
+const GridviewGridRoute = GridviewGridRouteImport.update({
+  id: '/gridview/grid',
+  path: '/gridview/grid',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/gridview/grid': typeof GridviewGridRoute
   '/projects/project_default': typeof ProjectsProject_defaultRoute
   '/posts': typeof PostsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/gridview/grid': typeof GridviewGridRoute
   '/projects/project_default': typeof ProjectsProject_defaultRoute
   '/posts': typeof PostsIndexRoute
 }
@@ -51,20 +59,33 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/gridview/grid': typeof GridviewGridRoute
   '/projects/project_default': typeof ProjectsProject_defaultRoute
   '/posts/': typeof PostsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/projects/project_default' | '/posts'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/gridview/grid'
+    | '/projects/project_default'
+    | '/posts'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/projects/project_default' | '/posts'
-  id: '__root__' | '/' | '/about' | '/projects/project_default' | '/posts/'
+  to: '/' | '/about' | '/gridview/grid' | '/projects/project_default' | '/posts'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/gridview/grid'
+    | '/projects/project_default'
+    | '/posts/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  GridviewGridRoute: typeof GridviewGridRoute
   ProjectsProject_defaultRoute: typeof ProjectsProject_defaultRoute
   PostsIndexRoute: typeof PostsIndexRoute
 }
@@ -99,12 +120,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProjectsProject_defaultRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/gridview/grid': {
+      id: '/gridview/grid'
+      path: '/gridview/grid'
+      fullPath: '/gridview/grid'
+      preLoaderRoute: typeof GridviewGridRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  GridviewGridRoute: GridviewGridRoute,
   ProjectsProject_defaultRoute: ProjectsProject_defaultRoute,
   PostsIndexRoute: PostsIndexRoute,
 }
