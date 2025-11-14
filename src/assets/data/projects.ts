@@ -3,9 +3,9 @@ import type gridItem from "../../components/gridItem"
 export const projectList: gridItem[] =
     [
         {
-            projectName: "Bugaboo Badlands",
+            projectName: "egg Badlands",
             projectURL: "/projects/bugaboo_badlands",
-            thumbnailURL: "../../public/images/game_images/games_showcase.webp",
+            thumbnailURL: "/images/game_images/games_showcase.webp",
             thumbnailAlt: "",
         },
         {
@@ -38,7 +38,7 @@ export const projectList: gridItem[] =
             thumbnailURL: "../../public/images/game_images/games_showcase.webp",
             thumbnailAlt: "",
         },
-        
+
         
 
     ]
