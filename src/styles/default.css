@@ -2,17 +2,10 @@
 
 body{
     font-family:'Google Sans Code';
-    background-image: url("../../public/images/background_abstract_shapes_02.png");
-    background-size: cover;
-    background-position: center center;
-    background-attachment: fixed;
 }
 
 .home{
-    margin: 0% 5% 0% 5%;
-    background-color: rgba(75, 77, 95, 0.507);
-    padding: 0;
-    color: rgb(161, 161, 161);
+    margin: 0% 10% 0% 10%;
 }
 
 .projectGrid{
@@ -22,7 +15,14 @@ body{
 .projectGrid ul{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 1em;
+    gap: 2px;
+}
+
+.projectGrid li{
+    border-left: 0 none;
+    border-right: 0 none;
+    margin: 0;
+    padding: 0;
 }
 
 .gridItem {
@@ -37,10 +37,6 @@ body{
 .gridItem:hover{
     box-shadow: 0.4em 0.5em 1em black;
     
-}
-
-.gridItem img{
-    border-radius: 0.4em;
 }
 
 .gridItem h3{
@@ -75,5 +71,9 @@ h6{
 
 li{
     display: inline;
-    text-align: justify;
+    padding: 0 1em 0 1em;
+    margin: 1em;
+    border-left: 1px solid;
+    border-right: 1px solid ;
+
 }
