@@ -2,30 +2,28 @@ import { Link } from "@tanstack/react-router";
 import type gridItem from "./gridItem";
 
 
-interface gridItems{
+interface gridItems {
     items: gridItem[];
 }
 
 
-export default function GridView({items}: gridItems) {
+export default function GridView({ items }: gridItems) {
     return (
-        <>
+        <div className="projectGrid">
             <ul>
                 {items.map((item) => (
                     <li>
                         <Link to={item.thumbnailURL}>
-                            {items.map((item) => (
-                                <li>
-                                    <Link to={item.projectURL}>
-                                        <img src={item.thumbnailURL} alt={item.thumbnailAlt} />
-                                        <h3>{item.projectName}</h3>
-                                    </Link>
-                                </li>
-                            ))}
+                            <div className="gridItem">
+                                <Link to={item.projectURL}>
+                                    <img src={item.thumbnailURL} alt={item.thumbnailAlt} width="100%" style={{display:"block"}}/>
+                                    <h3>{item.projectName}</h3>
+                                </Link>
+                            </div>
                         </Link>
                     </li>
                 ))}
             </ul>
-        </>
+        </div >
     )
 };

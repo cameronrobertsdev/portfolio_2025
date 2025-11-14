@@ -2,12 +2,63 @@
 
 body{
     font-family:'Google Sans Code';
+    background-image: url("../../public/images/background_abstract_shapes_02.png");
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 .home{
-    background-color: rgb(175, 175, 175);
-    padding: 1em 1em 10em 1em;
+    margin: 0% 5% 0% 5%;
+    background-color: rgba(75, 77, 95, 0.507);
+    padding: 0;
+    color: rgb(161, 161, 161);
 }
+
+.projectGrid{
+    margin: 0 10% 0 10%;
+}
+
+.projectGrid ul{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1em;
+}
+
+.gridItem {
+    position: relative;
+    text-align: left;
+    box-shadow: 0em 0em 0em black;
+    transition-property: box-shadow;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-in-out;
+}
+
+.gridItem:hover{
+    box-shadow: 0.4em 0.5em 1em black;
+    
+}
+
+.gridItem img{
+    border-radius: 0.4em;
+}
+
+.gridItem h3{
+    position: absolute;
+    background-clip: text;
+    bottom: 0;
+    left: 0;
+    opacity: 0%;
+    color: white;
+    transition-property: opacity;
+    transition-duration: 0.5s;
+     transition-timing-function: ease-in-out;
+}
+
+.gridItem:hover h3{
+    opacity: 100%;
+}
+
 
 h1{
     font-family: Arial, Helvetica, sans-serif;
@@ -25,5 +76,4 @@ h6{
 li{
     display: inline;
     text-align: justify;
-    padding: 1em;
 }

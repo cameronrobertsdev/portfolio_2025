@@ -10,7 +10,6 @@ const RootLayout = () => (
       'Projects',
       'About',
     ]}></NavBar>
-
     <hr />
     <Outlet />
     <TanStackRouterDevtools />
